@@ -19,3 +19,9 @@ git push -u origin ollama
 ### [ollama.list](./examples/model_list/index.js)
 
 ![alt text](README_Images/README/image.png)
+
+# 3. `ollama.request`和`ollama.generate`的区别？
+
+![alt text](README_Images/README/image-1.png)
+
+### `ollama.generate`的例子
