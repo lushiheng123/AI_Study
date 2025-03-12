@@ -1,5 +1,8 @@
 <h1 align = "center">ollama笔记</h1>
 
+# 可以先看具体的项目
+### [ollama本地后端](/examples/local_ollama/README.md)
+
 ```sh
 git init
 git checkout -b ollama
