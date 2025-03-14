@@ -1,7 +1,8 @@
 <h1 align = "center">ollama笔记</h1>
 
 # 可以先看具体的项目
-### [ollama本地后端](/examples/local_ollama/README.md)
+
+### [ollama 本地后端](/examples/local_ollama/README.md)
 
 ```sh
 git init
@@ -15,12 +16,28 @@ git push -u origin ollama
 
 # 目录
 
-- [ollama.list()遍历模型](#1-环境配一下npm-install-ollama必须要的)
-- [ollama.generate()](#3-ollamarequest和ollamagenerate的区别)
-- [deepseek-coder-v2 生成代码](#4-ollamagenerate使用deepseek-coder-v2模型提供-api-可以补全代码)
-- [llava 处理图片](#5-llava-模型可以处理图片因为他是多模态-multimodal-和视觉模型可以处理图片)
-- [ollama.chat](#6-ollamachat提供参数和格式输出特定格式的结果)
-  </br>
+- 简单介绍
+  - [generate 中参数 params 的讲解](#7-generate-中的参数)
+  - [ollama.list()遍历模型](#1-环境配一下npm-install-ollama必须要的)
+  - [ollama.generate()](#3-ollamarequest和ollamagenerate的区别)
+  - [deepseek-coder-v2 生成代码](#4-ollamagenerate使用deepseek-coder-v2模型提供-api-可以补全代码)
+  - [llava 处理图片](#5-llava-模型可以处理图片因为他是多模态-multimodal-和视觉模型可以处理图片)
+  - [ollama.chat](#6-ollamachat提供参数和格式输出特定格式的结果)
+- API
+  - [chat](/examples/API/Chat/README.md)
+  - [generate]
+  - [pull]
+  - [push]
+  - [create]
+  - [delete]
+  - [copy]
+  - [list]
+  - [show]
+  - [mebed]
+  - [ps]
+  - [abort]
+  - 
+---
 
 # 1. 环境配一下，`npm install ollama`必须要的
 
@@ -37,6 +54,23 @@ ollama
   .catch((error) => {
     console.error("Error fetching model list:", error);
   });
+```
+
+### 或者代码可以写成
+
+```js
+import ollama from "ollama";
+
+const model_list = async () => {
+  try {
+    const models = await ollama.list();
+    console.log(models); // 打印模型列表
+  } catch (error) {
+    console.error("Error fetching model list:", error);
+  }
+};
+
+model_list();
 ```
 
 ### `node index.js`运行
@@ -118,3 +152,39 @@ main();
 
 [ollama.chat](./examples/zod_to_schema/index.js)
 ![alt text](README_Images/README/image-6.png)
+
+# 7. generate 中的参数
+
+```js
+import ollama from "ollama";
+
+const translateSentence = async () => {
+  try {
+    const aiMsg = await ollama.generate({
+      //模型可以切换，都一样，deepseek思考时间长
+      model: "deepseek-r1:8b",
+      prompt:
+        "You are a helpful assistant that translates English to Chinese. Translate this sentence: 'I love programming.'",
+      temperature: 0.7,
+      maxRetries: 2,
+    });
+    console.log(aiMsg); // 只打印翻译结果
+  } catch (error) {
+    console.error("Error translating sentence:", error);
+  }
+};
+
+translateSentence();
+```
+
+## `temperature: 0.7`控制生成文本的随机性，0.7 是一个适中的值，既不过于保守（接近 0）也不过于随机（接近 1）。
+
+## `maxRetries: 2`，如果请求失败，最多重试 2 次
+
+## 返回参数`response`，代表回答，可以用 ollama.generate().response 来直接返回文本回答结果
+
+## 返回参数`context`模型内部`token`
+
+## 返回性能指标
+
+![alt text](README_Images/README/image-7.png)
