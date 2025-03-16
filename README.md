@@ -1,5 +1,7 @@
 <h1 align="center">谷歌Gemma模型学习</h1>
 
+# [官方文档](https://github.com/google-gemini/gemma-cookbook)
+
 # 这里我们选择 pytorch+docker 的方式，模型是`gemma3-4b-pt`
 
 ```sh
@@ -43,6 +45,8 @@ jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token=''
 ### 然后在带有`setup.py`的文件下`pip install .`
 
 # 2. 记住我们下载的模型有`tokenizer.model`和`model.ckpt`
+
+# [代码](/backend/1.ipynb)
 
 ```py
 import os
