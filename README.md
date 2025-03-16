@@ -4,12 +4,12 @@
 
 ```sh
 git init
-git checkout -b ollama
+git checkout -b gemma
 git remote add origin git@github.com:lushiheng123/AI_Study.git
 git add .
 git commit -m "first commit"
 git status
-git push -u origin ollama
+git push -u origin gemma
 ```
 
 # 1. `安装模型`，启用 `docker`,启用`jupyter notebook`,`git clone`仓库
