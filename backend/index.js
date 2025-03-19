@@ -1,10 +1,18 @@
-import { ChatOllama } from '@langchain/ollama';
-
-const llm = new ChatOllama({
-  model: "mistral:latest",
-  temperature: 0,
-  // other params...
+// import { ChatOllama,Ollama } from '@langchain/ollama';
+import Ollama from "ollama"
+const ollama = new Ollama({
+  baseUrl: "http://api.example.com",
+  model: "llama3.2:latest ",
 });
-const input = `Translate "I love programming" into French.`;
-const aiMsgForMetadata = await llm.invoke(input);
-console.log(aiMsgForMetadata.usage_metadata);
+
+// Streaming translation from English to German
+const stream = await ollama.stream(
+  `Translate "I love programming" into German.`
+);
+
+const chunks = [];
+for await (const chunk of stream) {
+  chunks.push(chunk);
+}
+
+console.log(chunks.join(""));
