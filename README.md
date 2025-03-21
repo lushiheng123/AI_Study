@@ -16,6 +16,7 @@ git push -u origin ollama
 
 # 目录
 
+- [ollama serve 看端口](#ollama-serve-看端口)
 - 简单介绍
   - [generate 中参数 params 的讲解](#7-generate-中的参数)
   - [ollama.list()遍历模型](#1-环境配一下npm-install-ollama必须要的)
@@ -36,10 +37,15 @@ git push -u origin ollama
   - [mebed]
   - [ps]
   - [abort]
-  - 
+  -
+
 ---
 
 # 1. 环境配一下，`npm install ollama`必须要的
+
+# ollama serve 看端口
+
+![alt text](README_Images/README/image-8.png)
 
 # 2. `ollama.list()`查看本地部署的模型，注意是异步处理
 

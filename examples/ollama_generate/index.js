@@ -1,7 +1,7 @@
 import ollama from "ollama";
 
 const response = await ollama.generate({
-  model: "mistral:latest",
+  model: "gemma3:4b",
   prompt: "What is the capital of France?",
 });
 

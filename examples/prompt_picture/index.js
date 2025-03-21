@@ -3,7 +3,7 @@ const main = async () => {
   try {
     const imagePath = "cat.jpg";
     const response = await ollama.generate({
-      model: "llava:latest",
+      model: "gemma3:4b",
       prompt: "describe this image:",
       images: [imagePath],
       stream: true,
