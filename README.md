@@ -12,6 +12,8 @@ git status
 git push -u origin LangChain
 ```
 
+![alt text](README_Images/README/image-6.png)
+
 # 1. 安装环境
 
 npm install langchain
@@ -147,3 +149,20 @@ console.log(aiMsgForMetadata.usage_metadata);
 ```
 
 ![alt text](README_Images/README/image-4.png)
+
+# 6. `response_metadata`响应
+
+```js
+import { ChatOllama } from "@langchain/ollama";
+
+const llm = new ChatOllama({
+  model: "mistral:latest",
+  temperature: 0,
+  // other params...
+});
+const input = `Translate "I love programming" into French.`;
+const aiMsgForResponseMetadata = await llm.invoke(input);
+console.log(aiMsgForResponseMetadata.response_metadata);
+```
+
+![alt text](README_Images/README/image-5.png)

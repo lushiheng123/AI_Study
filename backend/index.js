@@ -1,18 +1,15 @@
-// import { ChatOllama,Ollama } from '@langchain/ollama';
-import Ollama from "ollama"
-const ollama = new Ollama({
-  baseUrl: "http://api.example.com",
-  model: "llama3.2:latest ",
+import { ChatDeepSeek } from '@langchain/deepseek';
+import dotenv from "dotenv"
+dotenv.config()
+const llm = new ChatDeepSeek({
+  model: "deepseek-reasoner",
+  temperature: 0,
+  apiKey : process.env.DEEPSEEK_API
+  // other params...
 });
 
-// Streaming translation from English to German
-const stream = await ollama.stream(
-  `Translate "I love programming" into German.`
-);
+const input = `Translate "I love programming" into French.`;
 
-const chunks = [];
-for await (const chunk of stream) {
-  chunks.push(chunk);
-}
-
-console.log(chunks.join(""));
+// Models also accept a list of chat messages or a formatted prompt
+const result = await llm.invoke(input);
+console.log(result);
