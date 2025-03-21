@@ -12,6 +12,7 @@
   "type": "module",
   "dependencies": {
     "@langchain/deepseek": "^0.0.1",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "zod": "^3.24.2"
   }
 }
