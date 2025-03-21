@@ -4,7 +4,7 @@
 
 - [deepseek](./deepseek/index.js)
 
-# 1. `@langchain/deepseek`，有两个模型 chat/reasoner
+# 1. `@langchain/deepseek`，有两个模型 `chat`/`reasoner`
 
 ```js
 import { ChatDeepSeek } from "@langchain/deepseek";
@@ -27,7 +27,7 @@ console.log(result);
 
 ![alt text](README_Images/README/image.png)
 
-# 2. `chunk` 分片流式输出
+# 2. `llm.stream`和`chunk` 分片流式输出
 
 ```js
 import { ChatDeepSeek } from "@langchain/deepseek";
@@ -48,7 +48,7 @@ for await (const chunk of await llm.stream(input)) {
 }
 ```
 
-# 3. 使用 concat 处理一下 chunk 流式输出的结果
+# 3. 使用 `concat` 处理一下 chunk 流式输出的结果
 
 ```js
 import { ChatDeepSeek } from "@langchain/deepseek";
@@ -149,3 +149,45 @@ console.log(jokeResult);
 ```
 
 ![alt text](README_Images/README/image-3.png)
+
+# 6. `usage metadata`显示 token 消耗
+
+```js
+import { ChatDeepSeek } from "@langchain/deepseek";
+import dotenv from "dotenv";
+
+dotenv.config();
+const llm = new ChatDeepSeek({
+  model: "deepseek-chat",
+  //  model: "deepseek-reasoner",
+  temperature: 0,
+  apiKey: process.env.DEEPSEEK_API,
+  // other params...
+});
+const input = `Translate "I love programming" into French.`;
+const aiMsgForMetadata = await llm.invoke(input);
+console.log(aiMsgForMetadata.usage_metadata);
+```
+
+![alt text](README_Images/README/image-4.png)
+
+# 7. `Response Metadata`
+
+```js
+import { ChatDeepSeek } from "@langchain/deepseek";
+import dotenv from "dotenv";
+
+dotenv.config();
+const llm = new ChatDeepSeek({
+  model: "deepseek-chat",
+  //  model: "deepseek-reasoner",
+  temperature: 0,
+  apiKey: process.env.DEEPSEEK_API,
+  // other params...
+});
+const input = `Translate "I love programming" into French.`;
+const aiMsgForResponseMetadata = await llm.invoke(input);
+console.log(aiMsgForResponseMetadata.response_metadata);
+```
+
+![alt text](README_Images/README/image-5.png)
