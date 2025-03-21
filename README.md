@@ -2,6 +2,20 @@
 
 [官方](https://v03.api.js.langchain.com/classes/_langchain_ollama.ChatOllama.html)
 
+# 目录
+
+- `@langchain/ollama` 的`{ChatOllama}` API
+  - [invoke 处理单个请求](#2-用chatollama和invoke)
+  - [batch 处理多个 input](#batch处理多个请求)
+  - [stream 流式输出和 chunk 分片](#2-一个-chunk-一个-chunk-的回答就是使用流式传输提供更好的体验不用等所有答案一起出来再输出)
+  - [bindTools 绑定工具](#3-工具绑定用-bindtools-让-llm-调用外部功能)
+  - [withStructuredOutput 结构化输出](#4-withstructuredoutput结合zod库结构化输出)
+  - [usage_metadata 显示消耗](#5-usage_metadata-显示耗-token-数量)
+  - [response_metadata 显示消耗](#6-response_metadata响应)
+  - [getNumTokens 显示输入的 token 数量](#getnumtokens显示输入其实在metadata中也有)
+- `@langchain/ollama` 的`{Ollama}`API
+  - [chunk 和 stream](#chunk和stream)
+
 ```sh
 git init
 git checkout -b LangChain
@@ -166,3 +180,65 @@ console.log(aiMsgForResponseMetadata.response_metadata);
 ```
 
 ![alt text](README_Images/README/image-5.png)
+
+# `batch`处理多个请求
+
+```js
+import { ChatOllama } from "@langchain/ollama";
+
+const llm = new ChatOllama({
+  model: "gemma3:4b",
+  temperature: 0,
+});
+
+const inputs = [
+  'Translate "I love programming" into French.',
+  'Translate "Good morning" into Spanish.',
+  'Translate "How are you?" into German.',
+];
+
+// 使用 batch 方法处理多个请求
+const results = await llm.batch(inputs);
+console.log(results);
+```
+
+# `getNumTokens`显示输入，其实在`metadata`中也有
+
+```js
+import { ChatOllama } from "@langchain/ollama";
+
+const llm = new ChatOllama({
+  model: "gemma3:4b",
+  temperature: 0,
+});
+
+const inputs = `你好`;
+// 使用 batch 方法处理多个请求
+const results = await llm.getNumTokens(inputs);
+console.log(results);
+```
+
+![alt text](README_Images/README/image-7.png)
+
+# `chunk`和`stream`
+
+```js
+import { Ollama } from "@langchain/ollama";
+
+const ollama = new Ollama({
+  baseUrl: "http://localhost:11434",
+  model: "gemma3:4b",
+});
+
+// Streaming translation from English to German
+const stream = await ollama.stream(
+  `Translate "I love programming" into German.`
+);
+
+const chunks = [];
+for await (const chunk of stream) {
+  chunks.push(chunk);
+}
+
+console.log(chunks.join(""));
+```
