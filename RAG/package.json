@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "rag",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,15 +11,10 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@langchain/community": "^0.3.36",
     "@langchain/core": "^0.3.42",
     "@langchain/deepseek": "^0.0.1",
     "@langchain/langgraph": "^0.2.57",
-    "@langchain/ollama": "^0.2.0",
     "dotenv": "^16.4.7",
-    "langchain": "^0.3.19",
-    "ollama": "^0.5.14",
-    "uuid": "^11.1.0",
-    "zod": "^3.24.2"
+    "langchain": "^0.3.19"
   }
 }

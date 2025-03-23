@@ -1,20 +1,28 @@
 <h1 align="center">Lanchain+ollama学习</h1>
 
-[官方](https://v03.api.js.langchain.com/classes/_langchain_ollama.ChatOllama.html)
+# [官方](https://v03.api.js.langchain.com/classes/_langchain_ollama.ChatOllama.html)
+
+![alt text](README_Images/README/image-8.png)
+![alt text](README_Images/README/image-9.png)
+![alt text](README_Images/README/image-10.png)
 
 # 目录
 
-- `@langchain/ollama` 的`{ChatOllama}` API
-  - [invoke 处理单个请求](#2-用chatollama和invoke)
-  - [batch 处理多个 input](#batch处理多个请求)
-  - [stream 流式输出和 chunk 分片](#2-一个-chunk-一个-chunk-的回答就是使用流式传输提供更好的体验不用等所有答案一起出来再输出)
-  - [bindTools 绑定工具](#3-工具绑定用-bindtools-让-llm-调用外部功能)
-  - [withStructuredOutput 结构化输出](#4-withstructuredoutput结合zod库结构化输出)
-  - [usage_metadata 显示消耗](#5-usage_metadata-显示耗-token-数量)
-  - [response_metadata 显示消耗](#6-response_metadata响应)
-  - [getNumTokens 显示输入的 token 数量](#getnumtokens显示输入其实在metadata中也有)
-- `@langchain/ollama` 的`{Ollama}`API
-  - [chunk 和 stream](#chunk和stream)
+- ## `@langchian/community` 和第三方集成
+  - `@langchain/ollama`
+    - `@langchain/ollama` 的`{ChatOllama}` API
+      - [invoke 处理单个请求](#2-用chatollama和invoke)
+      - [batch 处理多个 input](#batch处理多个请求)
+      - [stream 流式输出和 chunk 分片](#2-一个-chunk-一个-chunk-的回答就是使用流式传输提供更好的体验不用等所有答案一起出来再输出)
+      - [bindTools 绑定工具](#3-工具绑定用-bindtools-让-llm-调用外部功能)
+      - [withStructuredOutput 结构化输出](#4-withstructuredoutput结合zod库结构化输出)
+      - [usage_metadata 显示消耗](#5-usage_metadata-显示耗-token-数量)
+      - [response_metadata 显示消耗](#6-response_metadata响应)
+      - [getNumTokens 显示输入的 token 数量](#getnumtokens显示输入其实在metadata中也有)
+    - `@langchain/ollama` 的`{Ollama}`API
+      - [chunk 和 stream](#chunk和stream)
+- ## [langsmith 开发者平台](./LangSmith/README.md)
+- ## [langGraph js](./LangGraph/README.md)
 
 ```sh
 git init
