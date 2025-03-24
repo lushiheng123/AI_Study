@@ -20,14 +20,14 @@ git push -u origin ollama
 - 简单介绍
   - [generate 中参数 params 的讲解](#7-generate-中的参数)
   - [ollama.list()遍历模型](#1-环境配一下npm-install-ollama必须要的)
-  - [ollama.generate()](#3-ollamarequest和ollamagenerate的区别)
+  - [ollama.generate 用于流式传输](#3-ollamarequest和ollamagenerate的区别)
   - [deepseek-coder-v2 生成代码](#4-ollamagenerate使用deepseek-coder-v2模型提供-api-可以补全代码)
   - [llava 处理图片](#5-llava-模型可以处理图片因为他是多模态-multimodal-和视觉模型可以处理图片)
   - [ollama.chat](#6-ollamachat提供参数和格式输出特定格式的结果)
 - API
   - [chat](/examples/API/Chat/README.md)
   - [generate]
-  - [pull]
+  - [pull下载模型到本地](#pull拉取下载模型)
   - [push]
   - [create]
   - [delete]
@@ -194,3 +194,7 @@ translateSentence();
 ## 返回性能指标
 
 ![alt text](README_Images/README/image-7.png)
+
+# `pull`拉取下载模型
+
+![alt text](README_Images/README/image-9.png)
