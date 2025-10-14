@@ -1,7 +1,7 @@
-import episodes from '../../data/episodes.json'
+import { getAllEpisodes } from '../../lib/episodes'
 
 export default function EpisodesPage() {
-  const pageItems = episodes.slice(0, 20)
+  const pageItems = getAllEpisodes().slice(0, 20)
   return (
     <main>
       <h1>Episodes</h1>

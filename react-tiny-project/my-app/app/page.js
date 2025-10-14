@@ -1,5 +1,5 @@
 import './globals.css'
-import episodes from '../data/episodes.json'
+import { getAllEpisodes } from '../lib/episodes'
 
 function FeaturedEpisode({ episode }) {
   if (!episode) return null
@@ -16,14 +16,14 @@ function FeaturedEpisode({ episode }) {
 }
 
 export default function Home() {
-  const featured = episodes[0]
+  const featured = getAllEpisodes()[0]
   return (
     <main>
       <FeaturedEpisode episode={featured} />
       <section className="preview-list">
         <h2>Latest Episodes</h2>
         <ul>
-          {episodes.slice(0,4).map(ep => (
+          {getAllEpisodes().slice(0,4).map(ep => (
             <li key={ep.slug}>
               <a href={`/episodes/${ep.slug}`}>{ep.title} — {ep.duration}</a>
             </li>

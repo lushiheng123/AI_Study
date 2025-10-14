@@ -1,7 +1,7 @@
-import episodes from '../../../data/episodes.json'
+import { getAllEpisodes, getEpisodeBySlug } from '../../../lib/episodes'
 
-function getEpisodeBySlug(slug) {
-  return episodes.find(e => e.slug === slug)
+export async function generateStaticParams() {
+  return getAllEpisodes().map(e => ({ slug: e.slug }))
 }
 
 export default function EpisodeDetail({ params }) {
