@@ -1,11 +1,13 @@
 
 ![alt text](README_Images/README/image-9.png)
 
-# npx create-next-app@latest my-app
+# `npx create-next-app@latest my-app`创建Next.js项目
+## 或者是`npm create vite@latest .`创建`vite`项目
 
 
-# uvx --from git+https://github.com/github/spec-kit.git specify init --here
-# 一次性的项目
+# 一次性的项目 `uvx --from git+https://github.com/github/spec-kit.git specify init --here`
+## 当然可以下载持久化的项目
+![alt text](README_Images/README/image-10.png)
 
 # 记住要直接code .跳转到下载的目录
 ![alt text](README_Images/README/image.png)

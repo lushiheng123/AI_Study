@@ -1,107 +1,50 @@
-<!--
-Sync Impact Report v1.0.0
-Initial constitution creation
-Version: 1.0.0 (Initial version)
-Modified principles: All new
-Added sections:
-- Project Overview
-- Core Principles
-- Technology Stack
-- Governance
-Templates requiring updates: None (initial creation)
-Follow-up TODOs: None
--->
-
-# Project Constitution
-
-Version: 1.0.0
-Ratification Date: 2025-10-13
-Last Amended Date: 2025-10-13
-
-## Project Overview
-
-This constitution establishes the foundational principles and governance for the my-app project, a Next.js based React application that prioritizes simplicity, clean code, and minimal dependencies.
+# [PROJECT_NAME] Constitution
+<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
 
 ## Core Principles
 
-### 1. Clean Code
+### [PRINCIPLE_1_NAME]
+<!-- Example: I. Library-First -->
+[PRINCIPLE_1_DESCRIPTION]
+<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
 
-Code MUST be written in a clear, consistent, and maintainable manner. This includes:
-- Consistent formatting and naming conventions
-- Clear function and variable names that describe their purpose
-- Single responsibility principle for components and functions
-- Documentation for complex logic or non-obvious implementations
-- No code duplication
+### [PRINCIPLE_2_NAME]
+<!-- Example: II. CLI Interface -->
+[PRINCIPLE_2_DESCRIPTION]
+<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
 
-**Rationale**: Clean code reduces cognitive load, improves maintainability, and makes the codebase accessible to all contributors.
+### [PRINCIPLE_3_NAME]
+<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
+[PRINCIPLE_3_DESCRIPTION]
+<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
 
-### 2. Simple User Experience
+### [PRINCIPLE_4_NAME]
+<!-- Example: IV. Integration Testing -->
+[PRINCIPLE_4_DESCRIPTION]
+<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
 
-The application MUST maintain a simple and intuitive user interface:
-- Clear navigation and user flows
-- Minimal cognitive load for users
-- Consistent UI patterns throughout the application
-- No unnecessary complexity or features
+### [PRINCIPLE_5_NAME]
+<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
+[PRINCIPLE_5_DESCRIPTION]
+<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
 
-**Rationale**: A simple UX ensures that users can easily understand and use the application without confusion or frustration.
+## [SECTION_2_NAME]
+<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
 
-### 3. Responsive Design
+[SECTION_2_CONTENT]
+<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
 
-The application MUST be fully responsive and work across all modern devices:
-- Mobile-first approach to design
-- Fluid layouts that adapt to different screen sizes
-- Proper handling of touch and mouse interactions
-- Consistent experience across devices
+## [SECTION_3_NAME]
+<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
 
-**Rationale**: Users expect applications to work seamlessly across all their devices.
-
-### 4. Minimal Dependencies
-
-The project MUST maintain minimal external dependencies:
-- Core dependencies are locked to:
-  - Next.js v15.5.4
-  - React v19.1.0
-  - Tailwind CSS v4
-- New dependencies MUST be thoroughly justified
-- Regular audits to remove unused dependencies
-- Preference for native browser APIs over third-party solutions
-
-**Rationale**: Fewer dependencies reduce security risks, bundle size, and maintenance overhead.
-
-### 5. No Testing Requirement
-
-This project explicitly MUST NOT include:
-- Unit tests
-- Integration tests
-- End-to-end tests
-- Any testing frameworks or tools
-
-**Rationale**: Per project requirements, testing is explicitly excluded to maintain simplicity and reduce overhead.
-
-## Technology Stack
-
-The project MUST use the following technology stack:
-- Next.js (v15.5.4) for the application framework
-- React (v19.1.0) for UI components
-- Tailwind CSS (v4) for styling
-- Modern JavaScript features as supported by Next.js
+[SECTION_3_CONTENT]
+<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
 
 ## Governance
+<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-### Version Control
+[GOVERNANCE_RULES]
+<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
 
-The constitution follows semantic versioning:
-- MAJOR: Breaking changes to principles or governance
-- MINOR: Non-breaking additions or expansions
-- PATCH: Clarifications and non-semantic refinements
-
-### Amendments
-
-1. Proposed changes must be documented and reviewed
-2. Changes must align with existing principles or explicitly supersede them
-3. Version number must be bumped according to semantic versioning rules
-4. Changes must be recorded in the Sync Impact Report
-
-### Compliance Review
-
-Project maintainers must regularly review code and features against these principles. Any violations must be addressed promptly.
+**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
+<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
