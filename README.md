@@ -18,9 +18,10 @@ winget install --id=astral-sh.uv  -e
 
 # 必要的步骤
 ![alt text](README_Images/README/image-2.png)
+![alt text](README_Images/README/image-4.png)
 ## 额外的步骤-辅助指令[额外的步骤](./0-辅助指令.md)
 
-![alt text](README_Images/README/image-4.png)
+
 # 0-一次性的项目 `uvx --from git+https://github.com/github/spec-kit.git specify init --here`
 # 1-通过 `/speckit.constitution`创建项目的管理原则和开发指南，以指导所有后续开发
 

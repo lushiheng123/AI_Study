@@ -11,9 +11,9 @@
 
 # 记住要直接code .跳转到下载的目录
 ![alt text](README_Images/README/image.png)
-
+# 最先通过/speckit.constitution 指定规则
 # 当通过/speckit.specify 执行的指令是(当然可以先不调用/speckit先让默认的gpt帮你改一下speckit/specify.prompt.md的内容)
-# 通过sepcify是明确的是需求内容
+# 通过sepcify是明确的是需求内容(例子）)
 ```text
 Follow instructions in speckit.specify.prompt.md.
 i am building a modern podcast website. I want it to blook sleek ,something that would stand out. Should I have a landing page with one fetured episode.there should be an episodes page,an about page, and a FAQ page.Should I have 20 episodes ,and eht daata is mocked -you do not need to pull anything from any real feed.
