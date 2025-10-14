@@ -5,12 +5,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -23,4 +18,43 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.site-header {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+}
+.header-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 14px 20px;
+}
+.brand {
+  font-weight:700;
+  font-size:1.1rem;
+  text-decoration:none;
+  color:var(--foreground);
+}
+.site-header nav a { margin-left:16px; text-decoration:none; color:var(--foreground); }
+
+.hero { display:flex; gap:20px; align-items:center; padding:28px 0; }
+.hero-artwork { width:220px; height:220px; object-fit:cover; border-radius:12px; background:linear-gradient(135deg,#eee,#ddd); }
+.hero-content h1 { margin:0 0 8px 0; font-size:1.6rem }
+.btn { display:inline-block; padding:10px 14px; background:#111; color:#fff; border-radius:8px; text-decoration:none }
+
+.preview-list ul, .episodes-list ul, .faq ul { list-style:none; padding:0; }
+.preview-list li, .episodes-list li { padding:12px 0; border-bottom:1px solid rgba(0,0,0,0.05) }
+.meta { color: #666; font-size:0.9rem }
+
+/* responsive */
+@media (max-width:720px) {
+  .hero { flex-direction:column; align-items:flex-start }
+  .hero-artwork { width:100%; height:auto }
 }

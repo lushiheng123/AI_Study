@@ -22,7 +22,17 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header className="site-header">
+          <div className="container header-inner">
+            <a className="brand" href="/">Podcast</a>
+            <nav>
+              <a href="/episodes">Episodes</a>
+              <a href="/about">About</a>
+              <a href="/faq">FAQ</a>
+            </nav>
+          </div>
+        </header>
+        <main className="container">{children}</main>
       </body>
     </html>
   );
